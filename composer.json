@@ -1,0 +1,26 @@
+{
+  "name": "tehplague/cdn-assets",
+  "type": "typo3-cms-extension",
+  "description": "CDN URL postprocessor capable of resolving Webpack asset manifests",
+  "homepage": "https://www.christian-spoo.info",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "keywords": [
+    "TYPO3 CMS",
+    "Webpack",
+    "CSS",
+    "JavaScript",
+    "CDN"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tehplague\\CdnAssets\\": "Classes/"
+    }
+  },
+  "version": "1.0.1",
+  "require": {
+    "php": "^7.2",
+    "symfony/config": "^4.0"
+  }
+}
