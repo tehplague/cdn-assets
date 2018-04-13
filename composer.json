@@ -4,7 +4,7 @@
   "description": "CDN URL postprocessor capable of resolving Webpack asset manifests",
   "homepage": "https://www.christian-spoo.info",
   "license": [
-    "GPL-2.0+"
+    "MIT"
   ],
   "keywords": [
     "TYPO3 CMS",
