@@ -1,5 +1,5 @@
 {
-  "name": "tehplague/cdn-assets",
+  "name": "tehplague/cdn_assets",
   "type": "typo3-cms-extension",
   "description": "CDN URL postprocessor capable of resolving Webpack asset manifests",
   "homepage": "https://www.christian-spoo.info",
