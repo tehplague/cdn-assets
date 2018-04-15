@@ -1,0 +1,24 @@
+config {
+    cdn_assets {
+        mappings {
+            10 {
+                enableCDN = 0
+                cdnHost = cdn.example.org
+                cdnUseSSL = 0
+                jsonAssetManifest = EXT:foo_site_package/Resources/Public/Template/manifest.json
+                resources {
+                    cssPrefix = EXT:foo_site_package/Resources/Public/Template
+                    jsPrefix = EXT:foo_site_package/Resources/Public/Template
+
+                    css {
+                        10 = common.css
+                        20 = homepage.css
+                    }
+                    jsFooter {
+                        10 = main.js
+                    }
+                }
+            }
+        }
+    }
+}
