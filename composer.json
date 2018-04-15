@@ -18,7 +18,6 @@
       "Tehplague\\CdnAssets\\": "Classes/"
     }
   },
-  "version": "1.0.1",
   "require": {
     "php": "^7.2",
     "symfony/config": "^4.0"
