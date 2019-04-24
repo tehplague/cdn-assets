@@ -53,6 +53,10 @@ class PageRendererHook
      */
     public function renderPreProcess(array $params, PageRenderer $pageRenderer)
     {
+        if (TYPO3_MODE !== 'FE') {
+            return;
+        }
+
         $tsfe = $this->getTypoScriptFrontendController();
         if (!$tsfe instanceof TypoScriptFrontendController) {
             return;
