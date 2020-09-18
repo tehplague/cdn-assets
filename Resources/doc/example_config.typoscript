@@ -17,6 +17,9 @@ config {
                     jsFooter {
                         10 = main.js
                     }
+                    jsFooterLib {
+                        10 = footer.js
+                    }
                 }
             }
         }

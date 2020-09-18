@@ -119,7 +119,8 @@ class PageRendererHook
         $assetSections = [
             'css' => 'cssPrefix|addCssFile',
             'js' => 'jsPrefix|addJsFile',
-            'jsFooter' => 'jsPrefix|addJsFooterFile'
+            'jsFooter' => 'jsPrefix|addJsFooterFile',
+            'jsFooterLib' => 'jsPrefix|addJsFooterLibrary'
         ];
 
         /** @var array $mapping */
@@ -138,7 +139,7 @@ class PageRendererHook
             foreach ($assetSections as $assetType => $assetConfig) {
                 list ($prefix, $addFunction) = explode('|', $assetConfig);
 
-                foreach ($mapping['resources'][$assetType] as $file) {
+                foreach ($mapping['resources'][$assetType] as $key => $file) {
                     $file = ltrim($file, '/');
                     if (isset($manifest[$file])) {
                         $file = '/' . ltrim($manifest[$file], '/');
@@ -149,7 +150,12 @@ class PageRendererHook
                     if ($mapping['enableCDN']) {
                         $file = self::replaceHost($file, $mapping['cdnHost'], $mapping['cdnUseSSL']);
                     }
-                    $pageRenderer->$addFunction($file);
+
+                    if ($addFunction == 'addJsFooterLibrary') {
+                        $pageRenderer->$addFunction($key, $file);
+                    } else {
+                        $pageRenderer->$addFunction($file);
+                    }
                 }
             }
         }
