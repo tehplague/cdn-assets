@@ -18,6 +18,11 @@
       "Tehplague\\CdnAssets\\": "Classes/"
     }
   },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "cdn_assets"
+    }
+  },
   "require": {
     "php": "^7.2",
     "symfony/config": "^4.0"
