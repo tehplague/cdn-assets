@@ -65,7 +65,7 @@ class PageRendererHook
         /** @var FrontendInterface $cache */
         $cache = GeneralUtility::makeInstance(CacheManager::class)
             ->getCache('cache_hash');
-        
+
         $tsfe->getConfigArray();
         $configCacheIdentifier = sha1('cdn_assets:configuration|' . $tsfe->id . '|' . json_encode($tsfe->config));
 
