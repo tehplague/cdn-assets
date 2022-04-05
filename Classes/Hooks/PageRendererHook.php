@@ -66,7 +66,9 @@ class PageRendererHook
         $cache = GeneralUtility::makeInstance(CacheManager::class)
             ->getCache('cache_hash');
 
-        $configCacheIdentifier = sha1('cdn_assets:configuration|' . $tsfe->id);
+        $tsfe->getConfigArray();
+        $configCacheIdentifier = sha1('cdn_assets:configuration|' . $tsfe->id . '|' . json_encode($tsfe->config));
+
         if (($extensionConfig = $cache->get($configCacheIdentifier)) === false) {
             $systemConfig = $tsfe->config;
 
